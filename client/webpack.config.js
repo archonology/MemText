@@ -29,7 +29,7 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-        name: 'Text Page',
+        name: 'MemText',
         short_name: 'Text',
         description: 'text editor',
         background_color: '#362F4B',
@@ -43,7 +43,7 @@ module.exports = () => {
           {
             src: path.resolve('./src/images/logo2.png'),
             size: [96, 128, 192, 256, 384, 512],
-            destination: path.join("src", "images")
+            // destination: path.join("src", "images")
           },
         ],
       })
