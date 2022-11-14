@@ -2,14 +2,14 @@ import { openDB } from 'idb';
 
 //initializes the database
 const initdb = async () =>
-  openDB('mem_text', 1, {
+  openDB('text', 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains('mem_text')) {
-        console.log('mem_text database already exists');
+      if (db.objectStoreNames.contains('text')) {
+        console.log('Text database already exists');
         return;
       }
-      db.createObjectStore('mem_text', { keyPath: 'id', autoIncrement: true });
-      console.log('mem_text database created');
+      db.createObjectStore('text', { keyPath: 'id', autoIncrement: true });
+      console.log('Text database created');
     },
   });
 
