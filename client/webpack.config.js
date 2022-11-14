@@ -18,13 +18,56 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'MemText Editor App'
+      }),
+
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+
+      new WebpackPwaManifest({
+        name: 'Text Page',
+        short_name: 'Text',
+        description: 'text editor',
+        background_color: '#362F4B',
+        theme_color: '#362F4B',
+        color: '#F7F9FE',
+        orientation: 'portrait',
+        display: 'standalone',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('./src/images/logo2.png'),
+            size: [96, 128, 192, 256, 384, 512],
+            destination: path.join("src", "images")
+          },
+        ],
+      })
     ],
 
     module: {
       rules: [
-        
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
+        },
       ],
-    },
+    }
   };
 };
+

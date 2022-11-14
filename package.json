@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": { 
+  "scripts": {
     "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server server.js --ignore client",
+    "server": "cd server node server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
@@ -15,16 +15,16 @@
   "author": "archonology",
   "license": "CCO-1.0",
   "dependencies": {
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/runtime": "^7.15.3",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
-    "http-server": "^0.11.1",
+    "http-server": "^14.1.1",
+    "if-env": "^1.0.4",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
@@ -33,8 +33,8 @@
     "workbox-webpack-plugin": "^6.2.4"
   },
   "devDependencies": {
-    "idb": "^6.1.2",
     "concurrently": "^5.2.0",
+    "idb": "^6.1.2",
     "nodemon": "^2.0.4"
   }
 }
