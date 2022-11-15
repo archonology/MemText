@@ -29,6 +29,8 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
+        fingerprints: false,
+        filename: 'manifest.json',
         name: 'MemText',
         short_name: 'Text',
         description: 'text editor',
@@ -41,9 +43,10 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('./src/images/logo2.png'),
+            filename: 'logo2',
+            src: path.resolve('src/images/logo2.png'),
             size: [96, 128, 192, 256, 384, 512],
-            // destination: path.join("src", "images")
+            destination: path.join("assets", "icons"),
           },
         ],
       })
