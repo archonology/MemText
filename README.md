@@ -6,6 +6,7 @@ Deployed Site: https://git.heroku.com/stormy-brook-86933.git
 ![screenshot](./Screenshot%202022-11-15%20at%202.07.44%20PM.png)    
 ## Table of Contents:
 #### [Description](#description)
+#### [Technologies](#technologies)
 #### [Installation](#installation)
 #### [Contribution Guidelines](#contribution-guidelines)
 #### [Questions](#questions)
@@ -13,6 +14,9 @@ Deployed Site: https://git.heroku.com/stormy-brook-86933.git
 
 ## Description
 Full stack PWA text editor that creates an easy place to keep coding notes or practice functions. It can be used in the browser and also saved to your local device. It uses Idb and/or localStorage to keep the notes you input.
+
+## Technologies
+Express, Webpack, Workbox, Babel, CodeMirror, Concurrently, Idb, CSS-Loader, Style-Loader, and HTTP-Server.  
     
 ## Installation
 No need to install if you follow the link above to the Heroku deployment of the application. Just click the install button to download it to your local device.  If you wish to clone the repo: once it is cloned locally, open a terminal in the root file. Run `npm install` and it will install the packages for client, server, and root.  Next, run `npm run  start:dev` to build the app and get it up and running on  PORT 3000. 
