@@ -27,7 +27,7 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-  registerRoute(
+registerRoute(
   //  filter the requests we want to cache (JS and CSS)
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
