@@ -3,9 +3,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
 module.exports = () => {
   return {
     mode: 'development',
@@ -31,7 +28,7 @@ module.exports = () => {
       new WebpackPwaManifest({
         //this fingerprint removes the unique key upon deploy(index.html is able to grab the right file)
         fingerprints: false,
-        filename: 'manifest.json',
+        // inject: true,
         name: 'MemText',
         short_name: 'Text',
         description: 'text editor',
@@ -48,16 +45,12 @@ module.exports = () => {
             size: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
-          {
-            src: path.resolve('favicon.io'),
-            size: [96, 128, 192, 256, 384, 512],
-            destination: path.join("assets", "icons"),
-          },
         ],
       })
     ],
 
     module: {
+      // CSS loaders
       rules: [
         {
           test: /\.css$/i,
@@ -66,6 +59,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
+          // We use babel-loader in order to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
@@ -75,7 +69,7 @@ module.exports = () => {
           },
         },
       ],
-    }
+    },
   };
 };
 
