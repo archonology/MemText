@@ -29,6 +29,7 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
+        //this fingerprint removes the unique key upon deploy(index.html is able to grab the right file)
         fingerprints: false,
         filename: 'manifest.json',
         name: 'MemText',
@@ -43,8 +44,12 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            filename: 'logo2',
-            src: path.resolve('src/images/logo2.png'),
+            src: path.resolve('src/images/logo.png'),
+            size: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+          {
+            src: path.resolve('favicon.io'),
             size: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
