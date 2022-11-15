@@ -33,7 +33,7 @@ export const getDb = async () => {
     const store = transaction.objectStore('jate');
     const request = store.getAll();
     const result = await request;
-    console.log('result.value', result);
-    return result;
+    console.log('result.value', result.value);
+    return result.value;
 };
 initdb();
