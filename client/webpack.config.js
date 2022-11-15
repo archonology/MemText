@@ -28,10 +28,9 @@ module.exports = () => {
       new WebpackPwaManifest({
         //this fingerprint removes the unique key upon deploy(index.html is able to grab the right file)
         fingerprints: false,
-        // inject: true,
-        name: 'MemText',
-        short_name: 'Text',
-        description: 'text editor',
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'PWA text editor',
         background_color: '#362F4B',
         theme_color: '#362F4B',
         color: '#F7F9FE',
@@ -65,7 +64,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          // We use babel-loader in order to use ES6.
+          // use babel-loader in order to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
