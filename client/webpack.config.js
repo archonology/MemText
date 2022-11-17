@@ -43,7 +43,7 @@ module.exports = () => {
             src: 'favicon.ico',
             filename: 'favicon.ico',
             size: [96],
-            
+            type: 'image/x-icon',
           },
           {
             src: path.resolve('src/images/logo.png'),
