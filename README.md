@@ -1,7 +1,7 @@
 # PWA Text Editor(J.A.T.E.)
 [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 ## Links
-Deployed Site: https://stormy-brook-86933.herokuapp.com
+Deployed Site: https://simple-pwa-text-editor-84.herokuapp.com
 ## Screenshot
 ![screenshot](./Screenshot%202022-11-15%20at%202.07.44%20PM.png)    
 ## Table of Contents:
